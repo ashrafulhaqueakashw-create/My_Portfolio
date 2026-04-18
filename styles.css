@@ -1,0 +1,1144 @@
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* Account for fixed navbar (h-16 = 64px + extra padding) */
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   ANIMATIONS & KEYFRAMES
+   ========================================== */
+
+/* Twinkling Stars Animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes twinkling {
+    0% { opacity: 0.1; }
+    50% { opacity: 1; }
+    100% { opacity: 0.1; }
+}
+
+/* Shooting Star Animation */
+@keyframes shootingStar {
+    0% {
+        transform: translateX(-100px) translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(300px) translateY(300px);
+        opacity: 0;
+    }
+}
+
+/* Blob Animation */
+@keyframes blob {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Glow Effect */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
+    }
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+.typing-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(40, end), fadeInUp 0.8s ease-out;
+    animation-delay: 0.2s;
+}
+
+.typing-cursor {
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    margin-left: 4px;
+}
+
+/* Skill Bar Animation */
+@keyframes fillBar {
+    from {
+        width: 0 !important;
+    }
+}
+
+.skill-bar {
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+/* Scroll Animation */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.scroll-animate {
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+/* ==========================================
+   ZERO GRAVITY FLOATING EFFECTS
+   ========================================== */
+
+/* Page Section Entrance Animation */
+@keyframes pageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: pageSlideIn 0.8s ease-out forwards;
+}
+
+/* Floating Elements - Zero Gravity */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+    50% {
+        transform: translateY(-40px) rotate(-2deg);
+    }
+    75% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+/* Gentle floating for cards */
+@keyframes floatGentle {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Floating particles effect - Mobile Optimized */
+@keyframes floatParticle {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    10% {
+        opacity: 0.9;
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(50px, -100px, 0) scale(1);
+    }
+}
+
+@keyframes floatParticleLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    10% {
+        opacity: 0.9;
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-50px, -100px, 0) scale(1);
+    }
+}
+
+/* Rotating floating elements */
+@keyframes spinFloat {
+    0% {
+        transform: rotate(0deg) translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg) translateY(-80px);
+        opacity: 0;
+    }
+}
+
+.floatParticle {
+    animation: floatParticle 4s ease-out forwards;
+    will-change: transform, opacity;
+}
+
+.floatParticleLeft {
+    animation: floatParticleLeft 4s ease-out forwards;
+    will-change: transform, opacity;
+}
+
+/* Rotating floating elements */
+@keyframes spinFloat {
+    0% {
+        transform: rotate(0deg) translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg) translateY(-80px);
+        opacity: 0;
+    }
+}
+
+.float-animation {
+    animation: floatGentle 4s ease-in-out infinite;
+}
+
+
+
+/* Staggered entrance for skill cards with floating effect */
+.skill-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards, floatGentle 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+.skill-card:nth-child(1) {
+    animation-delay: 0s, 0.3s;
+}
+
+.skill-card:nth-child(2) {
+    animation-delay: 0.1s, 0.5s;
+}
+
+.skill-card:nth-child(3) {
+    animation-delay: 0.2s, 0.7s;
+}
+
+/* Float effect on hover for skill cards */
+.skill-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-out;
+}
+
+/* Staggered entrance for project cards with floating effect */
+.project-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards, floatGentle 7s ease-in-out infinite;
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+}
+
+.project-card:nth-child(1) {
+    animation-delay: 0s, 0.4s;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.1s, 0.6s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.2s, 0.8s;
+}
+
+.project-card:nth-child(4) {
+    animation-delay: 0.3s, 1s;
+}
+
+/* Float effect on hover for project cards */
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Section stagger animation - smooth entrance */
+section:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+section:nth-of-type(2) {
+    animation-delay: 0.1s;
+}
+
+section:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+section:nth-of-type(4) {
+    animation-delay: 0.3s;
+}
+
+section:nth-of-type(5) {
+    animation-delay: 0.4s;
+}
+
+/* ==========================================
+   UTILITY CLASSES & CUSTOM STYLING
+   ========================================== */
+
+/* Space Background with Stars */
+body {
+    background: #000000;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(2px 2px at 60% 70%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 50% 50%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 80% 10%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(2px 2px at 90% 60%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 30% 80%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 10% 40%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(2px 2px at 40% 90%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 70% 25%, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 25% 15%, white, rgba(255, 255, 255, 0));
+    background-repeat: repeat;
+    background-size: 200% 200%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Starfield stars with twinkling */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+}
+
+.star.small {
+    width: 1px;
+    height: 1px;
+}
+
+.star.medium {
+    width: 2px;
+    height: 2px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+.star.large {
+    width: 2.5px;
+    height: 2.5px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.star.blue {
+    background: #ffffff;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.9), 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.star.cyan {
+    background: #ffffff;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.star.twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.star.slow-twinkle {
+    animation: twinkle 5s ease-in-out infinite;
+}
+
+.star.fast-twinkle {
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Smooth transitions only for interactive elements - reduces lag */
+button, a, input, textarea, .skill-card, .project-card, .nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ==========================================
+   ZERO GRAVITY EFFECT - OPTIMIZED
+   ========================================== */
+
+/* Zero Gravity for main headings */
+h1 {
+    animation: floatGentle 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+h2 {
+    animation: floatGentle 6s ease-in-out infinite;
+    animation-delay: 0.2s;
+    will-change: transform;
+}
+
+h3 {
+    animation: floatGentle 6s ease-in-out infinite;
+    animation-delay: 0.4s;
+    will-change: transform;
+}
+
+/* Zero Gravity for section containers */
+section {
+    animation: floatGentle 8s ease-in-out infinite;
+    animation-delay: 0.3s;
+    will-change: transform;
+}
+
+/* Zero Gravity for buttons */
+button {
+    animation: floatGentle 7s ease-in-out infinite;
+    animation-delay: 0.5s;
+    will-change: transform;
+}
+
+/* Zero Gravity for major text elements */
+.hero-title {
+    animation: floatGentle 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+.hero-subtitle {
+    animation: floatGentle 7s ease-in-out infinite;
+    animation-delay: 0.2s;
+    will-change: transform;
+}
+
+/* Zero Gravity for contact section */
+.contact-form {
+    animation: floatGentle 8s ease-in-out infinite;
+    animation-delay: 0.4s;
+    will-change: transform;
+}
+
+/* Enhanced floatGentle for more noticeable effect - Desktop only */
+@keyframes floatGentle {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    25% {
+        transform: translate3d(0, -8px, 0);
+    }
+    50% {
+        transform: translate3d(0, -12px, 0);
+    }
+    75% {
+        transform: translate3d(0, -6px, 0);
+    }
+}
+
+/* Mobile-optimized floating - Much smaller movement */
+@keyframes floatGentleMobile {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -2px, 0);
+    }
+}
+
+/* Ensure content is above stars */
+section {
+    position: relative;
+    z-index: 10;
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    color: rgb(209, 213, 219);
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(200, 200, 200));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Card Hover Effects */
+.skill-card,
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Button Animations */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+/* Input Fields */
+input, textarea {
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(200, 200, 200));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Underline Animation */
+.underline-animation {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(200, 200, 200));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ==========================================
+   GLASS MORPHISM EFFECT - iOS 27 STYLE
+   ========================================== */
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.glass-button {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+    .nav-link {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .nav-link::after {
+        bottom: -8px;
+    }
+
+    button {
+        font-size: 0.875rem;
+        padding: 0.75rem 1.25rem;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+    }
+}
+
+/* ==========================================
+   DARK MODE OPTIMIZATIONS
+   ========================================== */
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgb(6, 182, 212), rgb(59, 130, 246));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(34, 211, 238), rgb(96, 165, 250));
+}
+
+/* Selection */
+::selection {
+    background: rgba(6, 182, 212, 0.3);
+    color: rgb(34, 211, 238);
+}
+
+/* ==========================================
+   ADVANCED EFFECTS
+   ========================================== */
+
+/* Parallax Effect */
+.parallax {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glass Morphism Effect */
+.glass {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+/* Gradient Shift Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-shift {
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Text Shadow Glow */
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(6, 182, 212, 0.5), 
+                     0 0 20px rgba(6, 182, 212, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(6, 182, 212, 0.8),
+                     0 0 30px rgba(6, 182, 212, 0.5);
+    }
+}
+
+.text-glow {
+    animation: textGlow 2s ease-in-out infinite;
+}
+
+/* ==========================================
+   INTERSECTION OBSERVER ANIMATIONS
+   ========================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.zoom-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==========================================
+   LOADING & SKELETON
+   ========================================== */
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, rgb(51, 65, 85) 0%, rgb(71, 85, 105) 50%, rgb(51, 65, 85) 100%);
+    background-size: 1000px 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+/* ==========================================
+   FOCUS & ACCESSIBILITY
+   ========================================== */
+
+a:focus,
+button:focus {
+    outline: 2px solid rgb(6, 182, 212);
+    outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================
+   MOBILE OPTIMIZATION
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Reduce animation complexity on mobile */
+    section {
+        animation-duration: 0.6s;
+    }
+    
+    /* Disable floating animations on project/skill cards for mobile */
+    .project-card, .skill-card {
+        animation: fadeInUp 0.6s ease-out forwards !important;
+        will-change: auto;
+    }
+
+    .project-card:nth-child(1) {
+        animation-delay: 0s !important;
+    }
+
+    .project-card:nth-child(2) {
+        animation-delay: 0.1s !important;
+    }
+
+    .project-card:nth-child(3) {
+        animation-delay: 0.2s !important;
+    }
+
+    .project-card:nth-child(4) {
+        animation-delay: 0.3s !important;
+    }
+
+    .skill-card:nth-child(1) {
+        animation-delay: 0s !important;
+    }
+
+    .skill-card:nth-child(2) {
+        animation-delay: 0.1s !important;
+    }
+
+    .skill-card:nth-child(3) {
+        animation-delay: 0.2s !important;
+    }
+    
+    /* Optimize floating particles for mobile */
+    @keyframes floatParticle {
+        0% {
+            opacity: 0;
+            transform: translateY(0) translateX(0) scale(0);
+        }
+        10% {
+            opacity: 0.8;
+        }
+        90% {
+            opacity: 0.8;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-80px) translateX(40px) scale(1);
+        }
+    }
+    
+    @keyframes floatParticleLeft {
+        0% {
+            opacity: 0;
+            transform: translateY(0) translateX(0) scale(0);
+        }
+        10% {
+            opacity: 0.8;
+        }
+        90% {
+            opacity: 0.8;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-80px) translateX(-40px) scale(1);
+        }
+    }
+
+    /* Smoother card animations on mobile */
+    .skill-card, .project-card {
+        animation-duration: 0.5s;
+    }
+    
+    /* Reduce hover transform on mobile */
+    .skill-card:hover, .project-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Optimize parallax for mobile */
+    [data-parallax] {
+        transform: none !important;
+    }
+
+    /* Disable floating animations on headings and buttons for mobile - keep entrance only */
+    h1, h2, h3, button {
+        animation: none !important;
+    }
+
+    .hero-title {
+        animation: fadeInDown 0.8s ease-out forwards !important;
+    }
+
+    .hero-subtitle {
+        animation: fadeInUp 0.8s ease-out forwards !important;
+        animation-delay: 0.2s !important;
+    }
+
+    .contact-form {
+        animation: fadeInUp 0.8s ease-out forwards !important;
+    }
+}
+
+/* ==========================================
+   ULTRA-MOBILE OPTIMIZATION (Small phones)
+   ========================================== */
+
+@media (max-width: 480px) {
+    /* Disable some animations on very small screens */
+    section {
+        animation: none;
+    }
+    
+    /* Completely disable floating on ultra-mobile for all elements */
+    h1, h2, h3, button, .hero-title, .hero-subtitle, .contact-form, .project-card, .skill-card {
+        animation: none !important;
+    }
+
+    /* Keep entrance animations for content */
+    .animate-fade-in-down {
+        animation: fadeInDown 0.8s ease-out forwards !important;
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards !important;
+    }
+    
+    /* Simpler particle animations */
+    @keyframes floatParticle {
+        0% {
+            opacity: 0;
+            transform: translateY(0);
+        }
+        10% {
+            opacity: 0.6;
+        }
+        90% {
+            opacity: 0.6;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-60px);
+        }
+    }
+    
+    @keyframes floatParticleLeft {
+        0% {
+            opacity: 0;
+            transform: translateY(0);
+        }
+        10% {
+            opacity: 0.6;
+        }
+        90% {
+            opacity: 0.6;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-60px);
+        }
+    }
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR FOR FIREFOX
+   ========================================== */
+
+* {
+    scrollbar-color: rgb(6, 182, 212) rgb(15, 23, 42);
+    scrollbar-width: thin;
+}

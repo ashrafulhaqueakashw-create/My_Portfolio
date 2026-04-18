@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashraful Haque Akash - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #06b6d4;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #06b6d4;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: #06b6d4;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #06b6d4;
+            border-bottom: 2px solid #06b6d4;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .entry {
+            margin-bottom: 20px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .entry-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .entry-date {
+            font-size: 0.95em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .entry-subtitle {
+            font-size: 1em;
+            color: #06b6d4;
+            margin-bottom: 5px;
+        }
+
+        .entry-description {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: #f0f9ff;
+            padding: 15px;
+            border-left: 3px solid #06b6d4;
+            border-radius: 4px;
+        }
+
+        .skill-category h4 {
+            color: #06b6d4;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .skill-list {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #06b6d4;
+            font-weight: 600;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            .cv-container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .entry-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .entry-date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Ashraful Haque Akash</h1>
+            <p>Full Stack Developer | Web Architect | Problem Solver</p>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:ashraful.haque.akash.w@gmail.com">ashraful.haque.akash.w@gmail.com</a></span>
+                <span>📱 Phone Available Upon Request</span>
+                <span>🌐 Full Stack Developer</span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Passionate Computer Science graduate with expertise in full-stack web and mobile application development. Proven ability to design and implement scalable, high-performance solutions using modern technologies. Strong foundation in computer science fundamentals, software architecture, and best practices. Committed to writing clean, maintainable code and delivering exceptional user experiences.</p>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <div class="skill-list">
+                        <strong>Languages:</strong> HTML5, CSS3, JavaScript, TypeScript<br>
+                        <strong>Frameworks:</strong> React, Vue.js, Tailwind CSS
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend Development</h4>
+                    <div class="skill-list">
+                        <strong>Languages:</strong> Node.js, Python, JavaScript<br>
+                        <strong>Frameworks:</strong> Express, Django, REST APIs
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Databases & Tools</h4>
+                    <div class="skill-list">
+                        <strong>Databases:</strong> MySQL, PostgreSQL, MongoDB<br>
+                        <strong>Tools:</strong> Git, Docker, CI/CD, Agile
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Specializations</h4>
+                    <div class="skill-list">
+                        <strong>Cross-Platform:</strong> Mobile Development<br>
+                        <strong>Focus:</strong> Performance, Security, UX
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Projects -->
+        <div class="section">
+            <h2 class="section-title">Featured Projects</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">E-Commerce Platform</div>
+                        <div class="entry-subtitle">Production-Grade Web Application</div>
+                    </div>
+                </div>
+                <div class="entry-description">
+                    <strong>Technology Stack:</strong> React, Node.js, MongoDB, Stripe Payment Integration<br>
+                    <strong>Achievement:</strong> Built production-ready e-commerce platform handling 10K+ daily users with optimized performance and secure payment processing. Implemented advanced filtering, real-time inventory management, and responsive design.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Task Management Application</div>
+                        <div class="entry-subtitle">Enterprise-Grade Project Management Tool</div>
+                    </div>
+                </div>
+                <div class="entry-description">
+                    <strong>Technology Stack:</strong> Vue.js, Express.js, PostgreSQL, WebSockets<br>
+                    <strong>Achievement:</strong> Developed collaborative task management system supporting 500+ concurrent users with real-time updates, team management, and advanced analytics dashboard.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Weather Application</div>
+                        <div class="entry-subtitle">Cross-Platform Mobile App</div>
+                    </div>
+                </div>
+                <div class="entry-description">
+                    <strong>Technology Stack:</strong> React Native, Weather API, Offline Storage<br>
+                    <strong>Achievement:</strong> Created high-performance weather app optimized for mobile devices with offline support, geolocation tracking, and intuitive user interface. Focus on performance and user experience.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Social Media Analytics Dashboard</div>
+                        <div class="entry-subtitle">Advanced Analytics Platform</div>
+                    </div>
+                </div>
+                <div class="entry-description">
+                    <strong>Technology Stack:</strong> React, Python, Data Visualization Libraries<br>
+                    <strong>Achievement:</strong> Designed and developed comprehensive analytics platform with predictive analytics, real-time data visualization, and actionable insights for social media management.
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2 class="section-title">Technical Expertise</h2>
+            <ul>
+                <li><span class="highlight">Full Stack Development:</span> End-to-end application development from frontend UI to backend APIs and database design</li>
+                <li><span class="highlight">Software Architecture:</span> Design patterns, microservices, scalable system architecture</li>
+                <li><span class="highlight">Cross-Platform Development:</span> Web and mobile application development with code reusability</li>
+                <li><span class="highlight">Performance Optimization:</span> Code optimization, caching strategies, database optimization, SEO</li>
+                <li><span class="highlight">Security Implementation:</span> Authentication, authorization, data encryption, secure API design</li>
+                <li><span class="highlight">Testing & Quality Assurance:</span> Unit testing, integration testing, debugging, QA best practices</li>
+                <li><span class="highlight">Version Control & CI/CD:</span> Git workflows, automated testing, continuous deployment</li>
+                <li><span class="highlight">Problem Solving:</span> Data structures, algorithms, complex problem analysis and solutions</li>
+            </ul>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Bachelor of Science in Computer Science</div>
+                        <div class="entry-subtitle">Strong Foundation in CS Fundamentals</div>
+                    </div>
+                </div>
+                <div class="entry-description">
+                    Comprehensive computer science education covering algorithms, data structures, software engineering, database systems, and software architecture. Hands-on experience with various programming languages and frameworks.
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Qualities -->
+        <div class="section">
+            <h2 class="section-title">Professional Qualities</h2>
+            <ul>
+                <li><span class="highlight">Clean Code Advocate:</span> Writes maintainable, well-documented, and easily understandable code</li>
+                <li><span class="highlight">Continuous Learner:</span> Stays updated with latest technologies and best practices in web development</li>
+                <li><span class="highlight">Attention to Detail:</span> Meticulous about code quality, performance, and user experience</li>
+                <li><span class="highlight">Problem Solver:</span> Analytical approach to solving complex technical challenges</li>
+                <li><span class="highlight">Collaboration:</span> Strong communication and teamwork skills</li>
+                <li><span class="highlight">User-Focused:</span> Prioritizes creating exceptional user experiences in all projects</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 0.9em;">
+            <p>© 2026 Ashraful Haque Akash | Full Stack Developer Portfolio</p>
+        </div>
+    </div>
+</body>
+</html>
