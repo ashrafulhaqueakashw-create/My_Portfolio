@@ -767,30 +767,532 @@ input:focus, textarea:focus {
 }
 
 /* ==========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - COMPREHENSIVE BREAKPOINTS
    ========================================== */
 
-@media (max-width: 768px) {
-    .nav-link {
-        display: block;
-        padding: 10px 0;
+/* Extra Small Devices (320px - 479px) - Ultra Mobile */
+@media (max-width: 479px) {
+    html {
+        font-size: 14px;
     }
 
-    .nav-link::after {
-        bottom: -8px;
+    body {
+        font-size: 0.875rem;
     }
 
+    /* Hero Section - Extra Small */
+    #home {
+        min-height: calc(100vh - 64px);
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2;
+        animation: fadeInDown 0.8s ease-out forwards !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem !important;
+        animation: fadeInUp 0.8s ease-out forwards !important;
+    }
+
+    h1 {
+        font-size: 2rem;
+        animation: none !important;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        animation: none !important;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+        animation: none !important;
+    }
+
+    /* Sections */
+    section {
+        padding: 1.5rem 0 !important;
+        animation: none !important;
+    }
+
+    /* Padding adjustments */
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Cards */
+    .skill-card, .project-card {
+        animation: fadeInUp 0.6s ease-out forwards !important;
+    }
+
+    .skill-card:hover, .project-card:hover {
+        transform: translateY(-3px) !important;
+    }
+
+    /* Buttons */
     button {
         font-size: 0.875rem;
-        padding: 0.75rem 1.25rem;
+        padding: 0.625rem 1rem;
+        animation: none !important;
+    }
+
+    .glass-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Text size reductions */
+    p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    .text-lg {
+        font-size: 1rem !important;
+    }
+
+    .text-2xl {
+        font-size: 1.375rem !important;
+    }
+
+    .text-3xl {
+        font-size: 1.75rem !important;
+    }
+
+    /* Glass panels */
+    .glass {
+        padding: 1rem !important;
+    }
+
+    /* Navigation */
+    .nav-link {
+        font-size: 0.875rem;
+        padding: 0.5rem 0;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Form elements */
+    input, textarea {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    /* Remove all floating animations */
+    h1, h2, h3, h4, h5, h6, button, section {
+        animation: none !important;
+    }
+
+    /* Keep only entrance animations */
+    .animate-fade-in-down {
+        animation: fadeInDown 0.6s ease-out forwards !important;
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards !important;
+    }
+
+    /* Optimize floating particles */
+    @keyframes floatParticle {
+        0% {
+            opacity: 0;
+            transform: translateY(0);
+        }
+        10% {
+            opacity: 0.5;
+        }
+        90% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+    }
+
+    @keyframes floatParticleLeft {
+        0% {
+            opacity: 0;
+            transform: translateY(0);
+        }
+        10% {
+            opacity: 0.5;
+        }
+        90% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+    }
+
+    /* Tech tags - single row */
+    .flex.flex-wrap {
+        gap: 0.5rem;
+    }
+
+    .px-4.py-2 {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.75rem;
+    }
+}
+
+/* Small Devices (480px - 639px) - Mobile */
+@media (min-width: 480px) and (max-width: 639px) {
+    html {
+        font-size: 14.5px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem !important;
     }
 
     h1 {
         font-size: 2.25rem;
+        animation: none !important;
     }
 
     h2 {
-        font-size: 1.875rem;
+        font-size: 1.75rem;
+        animation: none !important;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        animation: none !important;
+    }
+
+    section {
+        padding: 2rem 1rem !important;
+        animation: none !important;
+    }
+
+    /* Buttons */
+    button {
+        font-size: 0.875rem;
+        padding: 0.75rem 1.25rem;
+        animation: none !important;
+    }
+
+    /* Cards grid */
+    .grid {
+        gap: 1.5rem !important;
+    }
+
+    /* Text sizing */
+    .text-lg {
+        font-size: 1.0625rem !important;
+    }
+
+    .text-2xl {
+        font-size: 1.5rem !important;
+    }
+
+    /* Remove floating animations */
+    h1, h2, h3, h4, h5, h6, button, section {
+        animation: none !important;
+    }
+}
+
+/* Medium Devices (640px - 767px) - Tablet (Small) */
+@media (min-width: 640px) and (max-width: 767px) {
+    html {
+        font-size: 15px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 3.5rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem !important;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3rem 1.5rem !important;
+    }
+
+    /* Buttons */
+    button {
+        font-size: 0.9375rem;
+        padding: 0.75rem 1.5rem;
+        animation: none !important;
+    }
+
+    /* Cards grid */
+    .grid {
+        gap: 2rem !important;
+    }
+
+    /* Remove excessive floating animations */
+    button, section {
+        animation: none !important;
+    }
+}
+
+/* Standard Tablet / Large Mobile (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    html {
+        font-size: 15.5px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 4.5rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.625rem !important;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    section {
+        padding: 3.5rem 2rem !important;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.875rem 1.75rem;
+    }
+
+    /* Grid layouts */
+    .grid {
+        gap: 2.5rem !important;
+    }
+
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    /* Text sizing */
+    .text-4xl {
+        font-size: 2.25rem !important;
+    }
+
+    .text-5xl {
+        font-size: 3rem !important;
+    }
+
+    .text-6xl {
+        font-size: 3.75rem !important;
+    }
+
+    .text-8xl {
+        font-size: 6rem !important;
+    }
+}
+
+/* Large Desktop (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    html {
+        font-size: 16px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 6rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.875rem !important;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        animation: floatGentle 6s ease-in-out infinite;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 4rem 2.5rem !important;
+    }
+
+    button {
+        font-size: 1.0625rem;
+        padding: 1rem 2rem;
+    }
+
+    /* Grid layouts */
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Extra Large Desktop (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+    html {
+        font-size: 16px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 7rem !important;
+    }
+
+    h1 {
+        font-size: 4rem;
+        animation: floatGentle 6s ease-in-out infinite;
+    }
+
+    h2 {
+        font-size: 2.75rem;
+    }
+
+    section {
+        padding: 5rem 3rem !important;
+    }
+
+    button {
+        font-size: 1.125rem;
+        padding: 1rem 2.25rem;
+    }
+}
+
+/* 2XL Desktop (1536px and above) */
+@media (min-width: 1536px) {
+    html {
+        font-size: 16.5px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 8rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 2.25rem !important;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+        animation: floatGentle 6s ease-in-out infinite;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 6rem 4rem !important;
+    }
+
+    button {
+        font-size: 1.1875rem;
+        padding: 1.25rem 2.5rem;
+    }
+
+    /* Grid layouts */
+    .grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Ultra-wide displays (2560px and above) */
+@media (min-width: 2560px) {
+    html {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 8rem 6rem !important;
+    }
+
+    .max-w-6xl {
+        max-width: 100% !important;
+        padding: 0 3rem;
+    }
+}
+
+/* ==========================================
+   COMMON RESPONSIVE UTILITIES
+   ========================================== */
+
+/* Ensure all container elements scale appropriately */
+.container, .max-w-6xl, .max-w-5xl, .max-w-4xl {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .container, .max-w-6xl, .max-w-5xl, .max-w-4xl {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container, .max-w-6xl, .max-w-5xl, .max-w-4xl {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Responsive text alignment and spacing */
+@media (max-width: 768px) {
+    .text-center {
+        text-align: center;
+    }
+
+    .gap-3 {
+        gap: 0.5rem !important;
+    }
+
+    .gap-4 {
+        gap: 1rem !important;
+    }
+
+    .gap-8 {
+        gap: 1.5rem !important;
+    }
+
+    .gap-12 {
+        gap: 2rem !important;
     }
 }
 
@@ -965,6 +1467,7 @@ button:focus {
    MOBILE OPTIMIZATION
    ========================================== */
 
+/* Mobile-first responsive design */
 @media (max-width: 768px) {
     /* Reduce animation complexity on mobile */
     section {
@@ -1071,6 +1574,30 @@ button:focus {
 
     .contact-form {
         animation: fadeInUp 0.8s ease-out forwards !important;
+    }
+
+    /* Responsive spacing */
+    .mb-12 {
+        margin-bottom: 2rem;
+    }
+
+    .mb-16 {
+        margin-bottom: 2.5rem;
+    }
+
+    .gap-8 {
+        gap: 1.5rem;
+    }
+
+    .gap-12 {
+        gap: 2rem;
+    }
+
+    /* Responsive form */
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        margin-bottom: 1rem;
     }
 }
 

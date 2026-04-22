@@ -11,6 +11,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -81,6 +85,7 @@
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 5px;
+            gap: 10px;
         }
 
         .entry-title {
@@ -93,6 +98,7 @@
             font-size: 0.95em;
             color: #666;
             font-style: italic;
+            white-space: nowrap;
         }
 
         .entry-subtitle {
@@ -151,24 +157,91 @@
                 box-shadow: none;
                 padding: 20px;
             }
+
+            body {
+                background: transparent;
+            }
         }
 
-        @media (max-width: 768px) {
+        /* Tablet and up (768px and above) */
+        @media (min-width: 768px) {
+            .cv-container {
+                padding: 40px;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Landscape tablets (960px and above) */
+        @media (min-width: 960px) {
+            .cv-container {
+                padding: 50px;
+            }
+
+            .header h1 {
+                font-size: 3em;
+            }
+
+            .section-title {
+                font-size: 1.75em;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Tablets - Portrait (max-width 767px) */
+        @media (max-width: 767px) {
             .cv-container {
                 padding: 20px;
+                box-shadow: none;
+                margin: 0;
+                background: transparent;
+            }
+
+            html {
+                font-size: 14px;
             }
 
             .header h1 {
                 font-size: 1.8em;
+                margin-bottom: 10px;
+            }
+
+            .header p {
+                font-size: 1em;
+                margin-bottom: 8px;
             }
 
             .contact-info {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
+                font-size: 0.9em;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .section {
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 1.25em;
+                margin-bottom: 12px;
+                padding-bottom: 6px;
+            }
+
+            .entry {
+                margin-bottom: 15px;
             }
 
             .entry-header {
@@ -177,7 +250,193 @@
             }
 
             .entry-date {
-                margin-top: 5px;
+                margin-top: 3px;
+                font-size: 0.875em;
+            }
+
+            .entry-title {
+                font-size: 1em;
+            }
+
+            .entry-subtitle {
+                font-size: 0.95em;
+            }
+
+            .entry-description {
+                font-size: 0.9em;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .skill-category {
+                padding: 12px;
+                border-left: 3px solid #06b6d4;
+            }
+
+            .skill-category h4 {
+                font-size: 0.9em;
+                margin-bottom: 6px;
+            }
+
+            .skill-list {
+                font-size: 0.85em;
+            }
+
+            ul {
+                margin-left: 15px;
+                font-size: 0.9em;
+            }
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Mobile phones - Small (max-width 479px) */
+        @media (max-width: 479px) {
+            html {
+                font-size: 13px;
+            }
+
+            .cv-container {
+                padding: 15px;
+            }
+
+            .header {
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .header p {
+                font-size: 0.9em;
+            }
+
+            .contact-info {
+                gap: 5px;
+                font-size: 0.8em;
+            }
+
+            .contact-info span {
+                display: block;
+                word-break: break-word;
+            }
+
+            .section-title {
+                font-size: 1.1em;
+            }
+
+            .entry-title {
+                font-size: 0.95em;
+            }
+
+            .entry-date {
+                font-size: 0.8em;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            ul {
+                margin-left: 12px;
+                font-size: 0.85em;
+            }
+        }
+
+        /* Mobile phones - Standard (480px - 639px) */
+        @media (min-width: 480px) and (max-width: 639px) {
+            html {
+                font-size: 14px;
+            }
+
+            .cv-container {
+                padding: 18px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 0.95em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 6px;
+                font-size: 0.9em;
+            }
+
+            .section-title {
+                font-size: 1.2em;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tablets - Large (640px - 959px) */
+        @media (min-width: 640px) and (max-width: 959px) {
+            html {
+                font-size: 14.5px;
+            }
+
+            .cv-container {
+                padding: 30px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .header p {
+                font-size: 1.05em;
+            }
+
+            .section-title {
+                font-size: 1.4em;
+            }
+
+            .entry-header {
+                flex-direction: row;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Print optimizations */
+        @media print {
+            * {
+                background: transparent !important;
+                color: black !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            .cv-container {
+                max-width: 100%;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            a {
+                color: black;
+                text-decoration: underline;
             }
         }
     </style>
@@ -190,15 +449,15 @@
             <p>Full Stack Developer | Web Architect | Problem Solver</p>
             <div class="contact-info">
                 <span>📧 <a href="mailto:ashraful.haque.akash.w@gmail.com">ashraful.haque.akash.w@gmail.com</a></span>
-                <span>📱 Phone Available Upon Request</span>
-                <span>🌐 Full Stack Developer</span>
+                <span>� Dhaka, Bangladesh</span>
+                <span>🌐 <a href="https://ashrafulhaque.com" target="_blank">Portfolio: ashrafulhaque.com</a></span>
             </div>
         </div>
 
         <!-- Professional Summary -->
         <div class="section">
             <h2 class="section-title">Professional Summary</h2>
-            <p>Passionate Computer Science graduate with expertise in full-stack web and mobile application development. Proven ability to design and implement scalable, high-performance solutions using modern technologies. Strong foundation in computer science fundamentals, software architecture, and best practices. Committed to writing clean, maintainable code and delivering exceptional user experiences.</p>
+            <p>Dedicated Computer Science undergraduate at BRAC University with strong expertise in full-stack web and mobile application development. Passionate about designing and implementing scalable, high-performance solutions using modern technologies. Equipped with solid computer science fundamentals, software architecture knowledge, and best practices. Committed to writing clean, maintainable code and creating exceptional user experiences. Based in Bangladesh with a proven track record of building production-grade applications.</p>
         </div>
 
         <!-- Core Competencies -->
@@ -315,11 +574,34 @@
                 <div class="entry-header">
                     <div>
                         <div class="entry-title">Bachelor of Science in Computer Science</div>
-                        <div class="entry-subtitle">Strong Foundation in CS Fundamentals</div>
+                        <div class="entry-subtitle">BRAC University, Dhaka, Bangladesh</div>
+                    </div>
+                    <div class="entry-date">Currently Enrolled</div>
+                </div>
+                <div class="entry-description">
+                    Pursuing undergraduate degree in Computer Science with focus on full-stack development, software architecture, and system design. Comprehensive coursework covering algorithms, data structures, software engineering, database systems, web technologies, and mobile application development.
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Higher Secondary Certificate (HSC)</div>
+                        <div class="entry-subtitle">Bangladesh Noubahini College, Dhaka, Bangladesh</div>
                     </div>
                 </div>
                 <div class="entry-description">
-                    Comprehensive computer science education covering algorithms, data structures, software engineering, database systems, and software architecture. Hands-on experience with various programming languages and frameworks.
+                    Advanced studies in Science stream with strong foundation in Physics, Chemistry, and Mathematics.
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Secondary School Certificate (SSC)</div>
+                        <div class="entry-subtitle">Kurmitola High School and College, Dhaka, Bangladesh</div>
+                    </div>
+                </div>
+                <div class="entry-description">
+                    Foundation education in Science stream with excellent academic performance.
                 </div>
             </div>
         </div>
