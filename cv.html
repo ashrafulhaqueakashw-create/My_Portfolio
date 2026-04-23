@@ -152,15 +152,20 @@
             margin-bottom: 8px;
         }
 
+        
+
         @media print {
             .cv-container {
                 box-shadow: none;
                 padding: 20px;
+                max-width: 100%;
             }
 
             body {
-                background: transparent;
-            }
+                background: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                }
         }
 
         /* Tablet and up (768px and above) */
