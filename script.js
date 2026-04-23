@@ -286,123 +286,15 @@ skillBars.forEach(bar => {
 });
 
 // ==========================================
-// DOWNLOAD CV AS PDF
-// ==========================================
-
-document.getElementById('download-cv-btn').addEventListener('click', () => {
-    const btn = document.getElementById('download-cv-btn');
-
-    // Show loading state
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
-    btn.disabled = true;
-
-    // Create a hidden iframe
-    const iframe = document.createElement('iframe');
-    iframe.style.position = 'fixed';
-    iframe.style.top = '-10000px';
-    iframe.style.left = '-10000px';
-    iframe.style.width = '210mm';   // A4 width
-    iframe.style.height = '297mm';  // A4 height
-    iframe.style.border = 'none';
-    document.body.appendChild(iframe);
-
-    iframe.onload = () => {
-        setTimeout(() => {
-            // Trigger the browser's native print-to-PDF dialog
-            iframe.contentWindow.focus();
-            iframe.contentWindow.print();
-
-            // Restore button and clean up
-            setTimeout(() => {
-                document.body.removeChild(iframe);
-                btn.innerHTML = '<i class="fas fa-download group-hover:-translate-y-1 transition-transform"></i> Download CV';
-                btn.disabled = false;
-            }, 1000);
-        }, 500); // wait for iframe styles to fully load
-    };
-
-    iframe.src = 'cv.html';
-});
-
-// ==========================================
 // CV DOWNLOAD FUNCTIONALITY
 // ==========================================
 
-const downloadCvBtn = document.getElementById('download-cv-btn');
-
-if (downloadCvBtn) {
-    downloadCvBtn.addEventListener('click', generateAndDownloadCV);
-}
-
-async function generateAndDownloadCV() {
-    const cvBtn = document.getElementById('download-cv-btn');
-    const originalText = cvBtn.innerHTML;
-    
-    try {
-        // Show loading state
-        cvBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating CV...';
-        cvBtn.disabled = true;
-        
-        // Fetch the CV HTML
-        const response = await fetch('cv.html');
-        const cvHtml = await response.text();
-        
-        // Create a temporary container
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = cvHtml;
-        
-        // Load html2pdf library from CDN
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
-        
-        script.onload = () => {
-            try {
-                // Extract just the CV container
-                const cvElement = tempDiv.querySelector('.cv-container');
-                
-                const opt = {
-                    margin: 10,
-                    filename: 'Ashraful_Haque_Akash_CV.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-                };
-                
-                html2pdf().set(opt).from(cvElement).save();
-                
-                // Reset button
-                setTimeout(() => {
-                    cvBtn.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
-                    setTimeout(() => {
-                        cvBtn.innerHTML = originalText;
-                        cvBtn.disabled = false;
-                    }, 2000);
-                }, 500);
-                
-            } catch (error) {
-                console.error('PDF generation error:', error);
-                cvBtn.innerHTML = originalText;
-                cvBtn.disabled = false;
-                alert('Error generating CV. Please try again.');
-            }
-        };
-        
-        script.onerror = () => {
-            console.error('Failed to load html2pdf library');
-            cvBtn.innerHTML = originalText;
-            cvBtn.disabled = false;
-            alert('Error loading PDF library. Please try again.');
-        };
-        
-        document.head.appendChild(script);
-        
-    } catch (error) {
-        console.error('CV download error:', error);
-        cvBtn.innerHTML = originalText;
-        cvBtn.disabled = false;
-        alert('Error downloading CV. Please try again.');
-    }
-}
+document.getElementById('download-cv-btn').addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href = 'cv.pdf';
+    link.download = 'Ashraful_Haque_Akash_CV.pdf';
+    link.click();
+});
 
 // ==========================================
 // FORM SUBMISSION
