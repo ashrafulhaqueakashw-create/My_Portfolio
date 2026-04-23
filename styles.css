@@ -1336,9 +1336,9 @@ input:focus, textarea:focus {
 
 /* Glass Morphism Effect */
 .glass {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(6, 182, 212, 0.2);
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
 }
 
 /* Gradient Shift Animation */
@@ -1611,9 +1611,15 @@ button:focus {
         animation: none;
     }
     
-    /* Completely disable floating on ultra-mobile for all elements */
-    h1, h2, h3, button, .hero-title, .hero-subtitle, .contact-form, .project-card, .skill-card {
+/* Completely disable floating on ultra-mobile for all elements */
+    h1, h2, h3, button, .hero-title, .hero-subtitle, .contact-form {
         animation: none !important;
+    }
+
+    /* Keep cards visible — just no animation */
+    .project-card, .skill-card {
+        animation: none !important;
+        opacity: 1 !important;
     }
 
     /* Keep entrance animations for content */
