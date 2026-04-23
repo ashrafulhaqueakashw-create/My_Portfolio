@@ -782,8 +782,7 @@ input:focus, textarea:focus {
 
     /* Hero Section - Extra Small */
     #home {
-        min-height: calc(100vh - 64px);
-        padding: 1rem;
+        padding-top: 80px;
     }
 
     .hero-title {
