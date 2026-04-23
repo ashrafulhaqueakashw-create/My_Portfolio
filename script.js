@@ -286,6 +286,43 @@ skillBars.forEach(bar => {
 });
 
 // ==========================================
+// DOWNLOAD CV AS PDF
+// ==========================================
+
+document.getElementById('download-cv-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('download-cv-btn');
+
+    // Show loading state
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+    btn.disabled = true;
+
+    // Fetch cv.html content
+    const response = await fetch('cv.html');
+    const htmlText = await response.text();
+
+    // Parse it into a temporary DOM element
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+    const cvContent = doc.body;
+
+    // html2pdf options
+    const opt = {
+        margin:       0,
+        filename:     'Ashraful_Haque_Akash_CV.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    // Generate and download PDF
+    html2pdf().set(opt).from(cvContent).save().then(() => {
+        // Restore button
+        btn.innerHTML = '<i class="fas fa-download group-hover:-translate-y-1 transition-transform"></i> Download CV';
+        btn.disabled = false;
+    });
+});
+
+// ==========================================
 // CV DOWNLOAD FUNCTIONALITY
 // ==========================================
 
