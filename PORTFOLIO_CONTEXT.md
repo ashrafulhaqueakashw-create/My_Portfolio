@@ -144,14 +144,17 @@ graph TD
   * Real-time response analytics dashboard calculating percentage distributions and submission timestamps.
   * Secure JWT authentication with user authorization for managing active and archived surveys.
 
-### 4.3 Case Study 03: Utsab Ethnic — E-Commerce Fashion Platform
-* **Role**: Frontend & UI Engineer
-* **Tech Stack**: React.js, Tailwind CSS, Stripe API, Node.js
+### 4.3 Case Study 03: Utsab Ethnic — B2C Apparel E-Commerce Platform
+* **Role**: Lead Full-Stack Architect
+* **Tech Stack**: React 19, Redux Toolkit (RTK Query), Express 5, Node.js, MongoDB (Mongoose), Tailwind CSS, Cloudinary, Multer
+* **Live Production**: [utsab-ethnic.vercel.app](https://utsab-ethnic.vercel.app) *(Backend API: [utsab-ethnic.onrender.com](https://utsab-ethnic.onrender.com))*
 * **Repository**: [`ashrafulhaqueakashw-create/Utsab_Ethnic`](https://github.com/ashrafulhaqueakashw-create/Utsab_Ethnic)
 * **Key Achievements**:
-  * High-trust, culturally authentic e-commerce storefront with high-resolution product catalogs.
-  * Interactive shopping bag, instant client-side subtotal & shipping calculation, and secure Stripe checkout flow.
-  * Zero-layout-shift responsive grid layout across mobile and desktop.
+  * **Full-Stack B2C Apparel Storefront**: Built a production-grade e-commerce application for Bangladeshi ethnic wear with dynamic variant management (size, color, SKU, inventory).
+  * **Automated Data Fetching & Caching**: Engineered Redux Toolkit architecture with RTK Query for automated query caching, tag-based cache invalidation, and zero-flicker optimistic UI updates.
+  * **Hierarchical Bangladesh Logistics**: Implemented a 3-tier address model (Division → District → Thana) with dynamic shipping calculations (Inside Dhaka: ৳80, Outside Dhaka: ৳150) and localized payment methods (Cash on Delivery, bKash, Nagad).
+  * **Cloud Deployment Pipeline**: Configured reverse proxy rewrites on Vercel (`client/vercel.json`) pointing to a containerized Express 5 REST API on Render and cloud MongoDB Atlas cluster.
+  * **100% WCAG 2.1 AA Compliance**: Strict adherence to accessible contrast (≥4.5:1), programmatic form labels, and screen-reader navigable product catalogs.
 
 ---
 
