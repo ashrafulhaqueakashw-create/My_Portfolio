@@ -77,17 +77,17 @@ const isMobile = isMobileDevice();
 // ==========================================
 
 function createFloatingParticles(section) {
-    // Skip if section is not visible or doesn't have enough space
-    if (!section || !section.offsetHeight) return;
+    // Only generate particles if section is in viewport and visible
+    if (!section || !section.offsetHeight || !isInViewport(section)) return;
     
-    // Reduce particle count significantly for better performance
-    const particleCount = isMobile ? 2 : 3;
+    // Minimal particle count for smooth 60fps performance without DOM bloat
+    const particleCount = isMobile ? 1 : 2;
     
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
-        const size = Math.random() * 3 + 1.5;
-        const delay = Math.random() * 1.5;
-        const duration = Math.random() * 2 + 4;
+        const size = Math.random() * 2.5 + 1.5;
+        const delay = Math.random() * 1;
+        const duration = Math.random() * 2 + 3.5;
         const startX = Math.random() * 100;
         const animationType = Math.random() > 0.5 ? 'floatParticle' : 'floatParticleLeft';
 
@@ -98,7 +98,7 @@ function createFloatingParticles(section) {
         particle.style.backgroundColor = 'rgba(6, 182, 212, 0.4)';
         particle.style.borderRadius = '50%';
         particle.style.left = startX + '%';
-        particle.style.bottom = '-20px';
+        particle.style.bottom = '0px';
         particle.style.pointerEvents = 'none';
         particle.style.zIndex = '5';
         particle.style.boxShadow = '0 0 12px rgba(6, 182, 212, 0.7)';
@@ -110,16 +110,19 @@ function createFloatingParticles(section) {
         particle.style.animation = `${animationType} ${duration}s ease-out forwards`;
         particle.style.animationDelay = delay + 's';
 
-        section.style.position = 'relative';
-        section.style.overflow = 'hidden';
         section.appendChild(particle);
 
-        // Remove particle after animation completes
+        // Clean up DOM node as soon as CSS animation completes
+        particle.addEventListener('animationend', () => {
+            particle.remove();
+        }, { once: true });
+
+        // Fallback cleanup
         setTimeout(() => {
             if (particle.parentNode) {
                 particle.remove();
             }
-        }, (duration + delay) * 1000);
+        }, (duration + delay + 0.5) * 1000);
     }
 }
 
@@ -181,19 +184,28 @@ document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in')
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            
-            // Close mobile menu if open
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
+        const href = this.getAttribute('href');
+        if (!href || href === '#' || href === '#!') {
+            e.preventDefault();
+            return;
+        }
+        try {
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
             }
+        } catch (err) {
+            // Ignore invalid selector
         }
     });
 });
@@ -289,12 +301,15 @@ skillBars.forEach(bar => {
 // CV DOWNLOAD FUNCTIONALITY
 // ==========================================
 
-document.getElementById('download-cv-btn').addEventListener('click', () => {
-    const link = document.createElement('a');
-    link.href = 'cv.pdf';
-    link.download = 'Ashraful_Haque_Akash_CV.pdf';
-    link.click();
-});
+const downloadCvBtn = document.getElementById('download-cv-btn');
+if (downloadCvBtn) {
+    downloadCvBtn.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = 'cv.pdf';
+        link.download = 'Ashraful_Haque_Akash_CV.pdf';
+        link.click();
+    });
+}
 
 // ==========================================
 // FORM SUBMISSION
@@ -645,9 +660,11 @@ document.addEventListener('mousedown', () => {
 
 // Log page load time
 window.addEventListener('load', () => {
-    const perfData = window.performance.timing;
-    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-    console.log('Page load time: ' + pageLoadTime + 'ms');
+    setTimeout(() => {
+        const navEntry = performance.getEntriesByType('navigation')[0];
+        const pageLoadTime = navEntry && navEntry.loadEventEnd > 0 ? Math.round(navEntry.loadEventEnd) : Math.round(performance.now());
+        console.log('Page load time: ' + pageLoadTime + 'ms');
+    }, 0);
 });
 
 // ==========================================

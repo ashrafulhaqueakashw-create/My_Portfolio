@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashraful Haque Akash - Full Stack Developer & Web Architect</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,38 +30,38 @@
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="md:hidden">
-                    <button id="menu-btn" class="text-white">
+                    <button id="menu-btn" class="text-white p-2 focus:outline-none" aria-label="Toggle navigation menu">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t">
-            <a href="#home" class="block px-4 py-2 hover:bg-slate-700">Home</a>
-            <a href="#about" class="block px-4 py-2 hover:bg-slate-700">About</a>
-            <a href="#skills" class="block px-4 py-2 hover:bg-slate-700">Skills</a>
-            <a href="#projects" class="block px-4 py-2 hover:bg-slate-700">Projects</a>
-            <a href="#contact" class="block px-4 py-2 hover:bg-slate-700">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+            <a href="#home" class="block px-4 py-3 hover:bg-white/10 transition-colors">Home</a>
+            <a href="#about" class="block px-4 py-3 hover:bg-white/10 transition-colors">About</a>
+            <a href="#skills" class="block px-4 py-3 hover:bg-white/10 transition-colors">Skills</a>
+            <a href="#projects" class="block px-4 py-3 hover:bg-white/10 transition-colors">Projects</a>
+            <a href="#contact" class="block px-4 py-3 hover:bg-white/10 transition-colors">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-24 md:pt-16 relative overflow-hidden" data-section="hero">
+    <section id="home" class="min-h-screen flex items-center justify-center pt-24 md:pt-16 pb-12 relative overflow-hidden" data-section="hero">
         <!-- Animated Background -->
         <div class="absolute inset-0 bg-gradient-to-br from-black via-black to-black"></div>
         
         <!-- Floating Blob Elements -->
-        <div class="absolute top-20 right-10 w-72 h-72 bg-white/5 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
-        <div class="absolute bottom-20 left-10 w-72 h-72 bg-white/5 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div class="absolute top-20 right-10 w-72 h-72 bg-white/5 rounded-full mix-blend-screen filter blur-3xl animate-blob pointer-events-none"></div>
+        <div class="absolute bottom-20 left-10 w-72 h-72 bg-white/5 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000 pointer-events-none"></div>
         
         <!-- Floating Glass Panels -->
-        <div class="absolute top-32 left-5 w-48 h-48 glass rounded-xl opacity-10 animate-float" style="animation-delay: 0s;"></div>
-        <div class="absolute bottom-40 right-10 w-56 h-56 glass rounded-3xl opacity-10 animate-float" style="animation-delay: 1s;"></div>
-        <div class="absolute top-1/2 right-1/4 w-32 h-32 glass rounded-lg opacity-10 animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute top-32 left-5 w-48 h-48 glass rounded-xl opacity-10 animate-float pointer-events-none" style="animation-delay: 0s;"></div>
+        <div class="absolute bottom-40 right-10 w-56 h-56 glass rounded-3xl opacity-10 animate-float pointer-events-none" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 right-1/4 w-32 h-32 glass rounded-lg opacity-10 animate-float pointer-events-none" style="animation-delay: 2s;"></div>
         
         <!-- Animated Grid Lines -->
-        <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
             <div class="absolute w-full h-px bg-white top-1/4"></div>
             <div class="absolute w-full h-px bg-white top-1/2"></div>
             <div class="absolute w-full h-px bg-white top-3/4"></div>
@@ -71,116 +70,121 @@
             <div class="absolute h-full w-px bg-white right-1/4"></div>
         </div>
         
-        <div class="relative z-10 text-center px-4 max-w-5xl">
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
             <!-- Decorative Top Badge -->
-            <div class="mb-8 animate-fade-in-down inline-block">
-                <span class="px-4 py-2 glass rounded-full text-sm text-white font-semibold">Welcome to my portfolio</span>
+            <div class="mb-6 animate-fade-in-down inline-block">
+                <span class="px-4 py-2 glass rounded-full text-xs sm:text-sm text-white font-semibold">Full-Stack Software Engineer</span>
             </div>
             
             <div class="mb-8 animate-fade-in-down">
                 <!-- Main Title with Gradient Effect -->
-                <h1 class="hero-title text-6xl md:text-8xl font-black mb-6 leading-tight relative">
+                <h1 class="hero-title text-4xl sm:text-6xl md:text-8xl font-black mb-4 sm:mb-6 leading-tight relative">
                     <span class="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent drop-shadow-lg">Ashraful Haque Akash</span>
                 </h1>
                 
                 <!-- Animated Subtitle with Typing Effect -->
-                <div class="h-12 mb-6">
-                    <p class="hero-subtitle text-2xl md:text-3xl text-white font-semibold animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="h-12 mb-4 sm:mb-6">
+                    <p class="hero-subtitle text-xl sm:text-2xl md:text-3xl text-white font-semibold animate-fade-in-up" style="animation-delay: 0.2s;">
                         <span class="typing-text">Full Stack Developer</span>
                         <span class="typing-cursor">|</span>
                     </p>
                 </div>
                 
                 <!-- Description with Glass Background -->
-                <div class="glass p-6 md:p-8 rounded-2xl mb-8 backdrop-blur-md animate-fade-in-up" style="animation-delay: 0.4s;">
-                    <p class="text-lg md:text-xl text-slate-200 leading-relaxed">
-                        Building scalable, high-performance web and mobile applications with modern tech stack. CS undergraduate passionate about clean code, architecture, and creating exceptional user experiences.
+                <div class="glass p-5 sm:p-7 md:p-8 rounded-2xl mb-8 backdrop-blur-md animate-fade-in-up max-w-3xl mx-auto" style="animation-delay: 0.4s;">
+                    <p class="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed">
+                        I Engineer High-Performance Web Applications That Scale. Transforming complex business requirements into seamless, production-ready systems using Next.js, TypeScript, and robust backend architectures.
                     </p>
                 </div>
             </div>
             
             <!-- Animated Tech Stack Tags -->
-            <div class="mb-12 animate-fade-in-up flex flex-wrap justify-center gap-3" style="animation-delay: 0.5s;">
-                <span class="px-4 py-2 glass rounded-full text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-pointer" style="animation: float 3s ease-in-out infinite;">React</span>
-                <span class="px-4 py-2 glass rounded-full text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-pointer" style="animation: float 3s ease-in-out infinite; animation-delay: 0.2s;">Node.js</span>
-                <span class="px-4 py-2 glass rounded-full text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-pointer" style="animation: float 3s ease-in-out infinite; animation-delay: 0.4s;">Web Architecture</span>
-                <span class="px-4 py-2 glass rounded-full text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-pointer" style="animation: float 3s ease-in-out infinite; animation-delay: 0.6s;">AI Proficient</span>
+            <div class="mb-10 sm:mb-12 animate-fade-in-up flex flex-wrap justify-center gap-2 sm:gap-3" style="animation-delay: 0.5s;">
+                <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 glass rounded-full text-xs sm:text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-pointer">Next.js</span>
+                <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 glass rounded-full text-xs sm:text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-pointer">TypeScript</span>
+                <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 glass rounded-full text-xs sm:text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-pointer">Node.js</span>
+                <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 glass rounded-full text-xs sm:text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-pointer">React.js</span>
             </div>
             
             <!-- CTA Buttons with Enhanced Styling -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style="animation-delay: 0.6s;">
-                <a href="#projects" class="group px-8 py-4 glass-button rounded-lg font-semibold text-center flex items-center justify-center gap-2 hover:scale-105 transform transition-all duration-300">
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 animate-fade-in-up w-full max-w-md mx-auto" style="animation-delay: 0.6s;">
+                <a href="#projects" class="w-full sm:w-auto px-7 py-3.5 glass-button rounded-lg font-semibold text-center flex items-center justify-center gap-2 hover:scale-105 transform transition-all duration-300">
                     View My Work 
-                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    <i class="fas fa-arrow-right"></i>
                 </a>
-                <button id="download-cv-btn" class="group px-8 py-4 glass-button rounded-lg font-semibold hover:scale-105 transform transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
-                    <i class="fas fa-download group-hover:-translate-y-1 transition-transform"></i> Download CV
-                </button>
+                <a href="#contact" class="w-full sm:w-auto px-7 py-3.5 glass-button rounded-lg font-semibold text-center hover:scale-105 transform transition-all duration-300 flex items-center justify-center gap-2">
+                    Let's Talk <i class="fas fa-comments"></i>
+                </a>
             </div>
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
-            <div class="text-white flex flex-col items-center gap-2">
-                <span class="text-sm">Scroll to explore</span>
-                <i class="fas fa-chevron-down text-2xl"></i>
+        <div class="absolute bottom-6 left-0 right-0 flex justify-center animate-bounce pointer-events-none">
+            <div class="text-white flex flex-col items-center gap-1.5">
+                <span class="text-xs sm:text-sm text-slate-300">Scroll to explore</span>
+                <i class="fas fa-chevron-down text-lg"></i>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-4" data-section="about">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+    <section id="about" class="py-16 sm:py-20 px-4" data-section="about">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
                     About Me
                 </h2>
                 <div class="w-24 h-1 bg-white mx-auto rounded"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="relative">
-                    <div class="relative glass p-8 rounded-lg overflow-hidden hover:glass-dark transition-all duration-300">
-                        <div class="w-full aspect-square overflow-hidden rounded-lg shadow-lg"><img src="IMG_2637.jpg" alt="Ashraful Haque Akash" class="w-full h-full object-cover"></div>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="relative max-w-sm sm:max-w-md mx-auto md:max-w-none w-full">
+                    <div class="relative glass p-4 sm:p-6 rounded-2xl overflow-hidden hover:glass-dark transition-all duration-300">
+                        <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg">
+                            <picture>
+                                <source srcset="IMG_2637.webp" type="image/webp">
+                                <img src="IMG_2637.jpg" alt="Ashraful Haque Akash" class="w-full h-full object-cover" width="1000" height="1000" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
                     </div>
                 </div>
 
                 <div>
-                    <p class="text-lg text-slate-300 mb-6 leading-relaxed">
-                        I'm a Computer Science undergraduate with deep expertise in full-stack web development and mobile applications. Specializing in building scalable, performant solutions using cutting-edge technologies. Passionate about clean architecture, best practices, and delivering products that users love.
+                    <p class="text-base sm:text-lg text-slate-300 mb-5 leading-relaxed">
+                        I'm a Full-Stack Software Engineer and Computer Science student at BRAC University, driven by a passion for solving complex problems through elegant code. While my academic foundation provided a deep understanding of data structures, algorithms, and networking, my hands-on experience as a freelance developer has taught me how to deliver real-world business value.
                     </p>
-                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                        With a strong foundation in CS fundamentals and hands-on experience with modern frameworks, I excel at translating complex requirements into elegant solutions. Committed to continuous learning through mentorship where I can contribute, grow, and turn classroom knowledge into real-world skills.
+                    <p class="text-base sm:text-lg text-slate-300 mb-6 sm:mb-8 leading-relaxed">
+                        I specialize in building end-to-end, data-driven applications that prioritize performance, security, and exceptional user experience. Whether it's architecting a relational database schema from scratch, implementing secure JWT authentication, or optimizing Next.js server-side rendering, I thrive in the technical trenches. I am currently seeking an internship or junior engineering role where I can contribute to impactful projects and collaborate with experienced engineering teams.
                     </p>
 
                     <div class="space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 glass rounded-lg flex items-center justify-center">
+                        <div class="flex items-start sm:items-center space-x-4 glass p-3.5 rounded-xl">
+                            <div class="w-12 h-12 glass rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-code text-white text-lg"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold">Full Stack Architecture</h3>
-                                <p class="text-slate-300">Designing scalable systems from frontend to cloud infrastructure</p>
+                                <h3 class="text-lg sm:text-xl font-semibold">End-to-End Development</h3>
+                                <p class="text-slate-300 text-sm">From React frontends to Node.js APIs and relational database schemas, I own the full stack.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 glass rounded-lg flex items-center justify-center">
-                                <i class="fas fa-mobile-alt text-white text-lg"></i>
+                        <div class="flex items-start sm:items-center space-x-4 glass p-3.5 rounded-xl">
+                            <div class="w-12 h-12 glass rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-laptop-code text-white text-lg"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold">Cross-Platform Development</h3>
-                                <p class="text-slate-300">Building performant web and native mobile applications</p>
+                                <h3 class="text-lg sm:text-xl font-semibold">Freelance Client Delivery</h3>
+                                <p class="text-slate-300 text-sm">Shipping production-grade solutions for real-world clients with a focus on deadlines and quality.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 glass rounded-lg flex items-center justify-center">
-                                <i class="fas fa-paint-brush text-white text-lg"></i>
+                        <div class="flex items-start sm:items-center space-x-4 glass p-3.5 rounded-xl">
+                            <div class="w-12 h-12 glass rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-white text-lg"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold">Performance & UX</h3>
-                                <p class="text-slate-300">Optimizing systems for speed and creating delightful user experiences</p>
+                                <h3 class="text-lg sm:text-xl font-semibold">Security & Performance</h3>
+                                <p class="text-slate-300 text-sm">Implementing JWT authentication, route protection, and server-side rendering optimizations.</p>
                             </div>
                         </div>
                     </div>
@@ -189,142 +193,83 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4 glass" data-section="skills">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
-                    Skills & Technologies
+    <!-- Skills Section - Technical Arsenal -->
+    <section id="skills" class="py-16 sm:py-20 px-4 glass" data-section="skills">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
+                    Technical Arsenal
                 </h2>
                 <div class="w-24 h-1 bg-white mx-auto rounded"></div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Frontend -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+                <!-- Frontend Engineering -->
                 <div class="skill-card group">
-                    <div class="glass p-8 h-full group-hover:glass-dark transition-all duration-300">
-                        <div class="w-16 h-16 glass rounded-lg flex items-center justify-center mb-6 group-hover:shadow-lg transition-all duration-300">
+                    <div class="glass p-6 sm:p-7 h-full rounded-xl group-hover:glass-dark transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 glass rounded-lg flex items-center justify-center mb-5 group-hover:shadow-lg transition-all duration-300">
                             <i class="fas fa-laptop-code text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Frontend</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span>HTML & CSS</span>
-                                <span class="text-white">95%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 95%"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between pt-2">
-                                <span>JavaScript</span>
-                                <span class="text-white">90%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 90%"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between pt-2">
-                                <span>React & Vue</span>
-                                <span class="text-white">85%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 85%"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between pt-2">
-                                <span>Tailwind CSS</span>
-                                <span class="text-white">90%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 90%"></div>
-                            </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3">Frontend Engineering</h3>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">React.js</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Next.js 15</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">TypeScript</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Vue.js</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">HTML5/CSS3</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Backend -->
+                <!-- Backend Engineering -->
                 <div class="skill-card group">
-                    <div class="glass p-8 h-full group-hover:glass-dark transition-all duration-300">
-                        <div class="w-16 h-16 glass rounded-lg flex items-center justify-center mb-6 group-hover:shadow-lg transition-all duration-300">
+                    <div class="glass p-6 sm:p-7 h-full rounded-xl group-hover:glass-dark transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 glass rounded-lg flex items-center justify-center mb-5 group-hover:shadow-lg transition-all duration-300">
                             <i class="fas fa-server text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Backend</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span>Node.js</span>
-                                <span class="text-white">88%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 88%"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between pt-2">
-                                <span>Python</span>
-                                <span class="text-white">85%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 85%"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between pt-2">
-                                <span>Express & Django</span>
-                                <span class="text-white">85%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 85%"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between pt-2">
-                                <span>Databases</span>
-                                <span class="text-white">82%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 82%"></div>
-                            </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3">Backend Engineering</h3>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Node.js</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Express.js</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Python</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Java</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">C++</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">RESTful API Design</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tools & Other -->
+                <!-- Database & Data Modeling -->
                 <div class="skill-card group">
-                    <div class="glass p-8 h-full group-hover:glass-dark transition-all duration-300">
-                        <div class="w-16 h-16 glass rounded-lg flex items-center justify-center mb-6 group-hover:shadow-lg transition-all duration-300">
-                            <i class="fas fa-tools text-white text-2xl"></i>
+                    <div class="glass p-6 sm:p-7 h-full rounded-xl group-hover:glass-dark transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 glass rounded-lg flex items-center justify-center mb-5 group-hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-database text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Tools & Other</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span>Git & GitHub</span>
-                                <span class="text-white">92%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 92%"></div>
-                            </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3">Database & Data Modeling</h3>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">MySQL</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">MongoDB</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Relational Schema</span>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="flex items-center justify-between pt-2">
-                                <span>REST APIs</span>
-                                <span class="text-white">88%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 88%"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between pt-2">
-                                <span>Docker & CI/CD</span>
-                                <span class="text-white">80%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 80%"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between pt-2">
-                                <span>Agile & Scrum</span>
-                                <span class="text-white">85%</span>
-                            </div>
-                            <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden border border-white/20">
-                                <div class="bg-white h-full skill-bar" style="width: 85%"></div>
-                            </div>
+                <!-- DevOps & Architecture -->
+                <div class="skill-card group">
+                    <div class="glass p-6 sm:p-7 h-full rounded-xl group-hover:glass-dark transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 glass rounded-lg flex items-center justify-center mb-5 group-hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-rocket text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3">DevOps & Architecture</h3>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Git/GitHub</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Docker</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">CI/CD Pipelines</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">Agile/Scrum</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">WebSockets</span>
+                            <span class="px-3 py-1 bg-white/10 text-slate-200 rounded-full text-xs font-medium">JWT Auth</span>
                         </div>
                     </div>
                 </div>
@@ -333,131 +278,216 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4" data-section="projects">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+    <section id="projects" class="py-16 sm:py-20 px-4" data-section="projects">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
                     Featured Projects
                 </h2>
                 <div class="w-24 h-1 bg-white mx-auto rounded"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-lg h-64 mb-6">
-                        <img src="SurveyHub.png" alt="SurveyHub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                            <button class="px-6 py-3 glass-button rounded-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                View Project <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
+            <!-- Featured Case Study 01: Fuel Flow -->
+            <div class="project-card mb-10 sm:mb-14">
+                <div class="glass rounded-2xl overflow-hidden border border-white/15">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="relative overflow-hidden h-52 sm:h-64 md:h-auto min-h-[220px] md:min-h-[380px] bg-black/40">
+                            <picture>
+                                <source srcset="Fuel_Flow.webp" type="image/webp">
+                                <img src="Fuel_Flow.png" alt="FuelFlow Gas Station & Smart Dispatch System" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" width="1280" height="698" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="p-5 sm:p-7 md:p-8 flex flex-col justify-center">
+                            <span class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Featured Project</span>
+                            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2.5 text-white">FuelFlow</h3>
+                            <p class="text-slate-300 text-sm sm:text-base mb-4 leading-relaxed">An enterprise-grade gas station management and on-demand doorstep fuel dispatch platform with congestion-aware time-slot scheduling, dynamic off-peak discounts, and 100% WCAG 2.1 AA accessibility compliance.</p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Next.js 15 (Turbopack)</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">React 19</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">TypeScript</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Tailwind CSS 4</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">MySQL</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">JWT &amp; bcrypt</span>
+                                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full text-xs font-medium">100% WCAG AA</span>
+                            </div>
+                            
+                            <ul class="space-y-2.5 text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Smart Congestion Scheduling &amp; Dynamic Pricing:</strong> Engineered an intelligent 2-hour dispatch booking engine that tracks urban traffic and station capacity, applying automated 10%–15% off-peak discounts.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Role-Based Operational Architecture:</strong> Built unified portals for Station Admin (analytics, stock, staff), Employee Terminal (shift check-in/out, order fulfillment), and Customer Self-Service guarded by HttpOnly JWT cookies and bcrypt security.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>100% WCAG 2.1 AA Accessibility &amp; Human Light Theme:</strong> Transformed UI into an authentic, high-trust human design inspired by top consumer apps, passing Lighthouse audits with certified &ge;4.5:1 color contrast and full screen-reader compliance.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Relational MySQL Data Engine:</strong> Architected an 8-table relational schema handling live inventory auto-deductions, low-reserve alerts (&lt;10L), BSTI-calibrated meter tracking, and customer review moderation.</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="flex flex-col sm:flex-row gap-3 pt-1">
+                                <a href="#" class="px-5 py-2.5 glass-button rounded-lg font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/ashrafulhaqueakashw-create/Fuel_Flow" target="_blank" class="px-5 py-2.5 glass-button rounded-lg font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                                    <i class="fab fa-github"></i> Source Code
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="glass p-6 rounded-lg group-hover:glass-dark transition-all duration-300">
-                        <h3 class="text-2xl font-bold mb-3 text-white">SurveyHub – Full-Stack Survey Platform</h3>
-                    <p class="text-slate-300 mb-4">MERN stack web application for creating and managing online surveys with real-time result analytics. Implemented JWT-based authentication, dynamic form generation with React/Vite frontend, Node.js/Express backend and MongoDB.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">React</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">Node.js</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">MongoDB</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">JWT Auth</span>
+                </div>
+            </div>
+
+            <!-- Featured Case Study 02: SurveyHub -->
+            <div class="project-card mb-12 sm:mb-16">
+                <div class="glass rounded-2xl overflow-hidden border border-white/15">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-5 sm:p-7 md:p-8 flex flex-col justify-center order-2 md:order-1">
+                            <span class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Featured Project</span>
+                            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2.5 text-white">SurveyHub</h3>
+                            <p class="text-slate-300 text-sm sm:text-base mb-4 leading-relaxed">A dynamic data collection platform enabling users to create intricate surveys and extract actionable insights through real-time analytics.</p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">MongoDB</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Express.js</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">React.js</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Node.js</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Vite</span>
+                            </div>
+                            
+                            <ul class="space-y-2.5 text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Developed a high-performance dynamic form generation engine on the frontend, allowing users to effortlessly build complex, deeply nested survey structures.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Built a scalable RESTful backend infrastructure capable of ingesting, validating, and processing thousands of concurrent survey responses.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Implemented stateful JWT authentication to ensure secure data collection and protect user privacy across the entire platform.</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="flex flex-col sm:flex-row gap-3 pt-1">
+                                <a href="#" class="px-5 py-2.5 glass-button rounded-lg font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/ashrafulhaqueakashw-create/SurveyHub" target="_blank" class="px-5 py-2.5 glass-button rounded-lg font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                                    <i class="fab fa-github"></i> Source Code
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex gap-4">
-                            <a href="#" class="text-white hover:text-gray-300 transition-colors">
+                        <div class="relative overflow-hidden h-52 sm:h-64 md:h-auto min-h-[220px] md:min-h-[380px] bg-black/40 order-1 md:order-2">
+                            <picture>
+                                <source srcset="SurveyHub.webp" type="image/webp">
+                                <img src="SurveyHub.png" alt="SurveyHub Online Survey Platform" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" width="1280" height="698" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- Featured Case Study 03: Utsab Ethnic -->
+            <div class="project-card mb-12 sm:mb-16">
+                <div class="glass rounded-2xl overflow-hidden border border-white/15">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="relative overflow-hidden h-52 sm:h-64 md:h-auto min-h-[220px] md:min-h-[380px] bg-black/40">
+                            <picture>
+                                <source srcset="Utsab_Ethnic.webp" type="image/webp">
+                                <img src="Utsab_Ethnic.jpg" alt="Utsab Ethnic E-Commerce Platform" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" width="1280" height="714" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="p-5 sm:p-7 md:p-8 flex flex-col justify-center">
+                            <span class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Featured Project</span>
+                            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2.5 text-white">Utsab Ethnic</h3>
+                            <p class="text-slate-300 text-sm sm:text-base mb-4 leading-relaxed">A production-grade, full-stack B2C e-commerce platform for ethnic apparel featuring automated inventory, multi-tier location shipping, and localized payment workflows.</p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">React 19</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Redux Toolkit</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">RTK Query</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Express 5</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">MongoDB</span>
+                                <span class="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Cloudinary</span>
+                            </div>
+                            
+                            <ul class="space-y-2.5 text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Developed a high-performance single-page storefront using React 19 and Redux Toolkit with RTK Query for automated caching, query deduplication, and optimistic UI updates.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Architected an Express 5 REST API and MongoDB schema supporting multi-tier Bangladesh division/district/thana shipping hierarchies and localized payment gateways (bKash, Nagad, COD).</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Engineered role-based JWT authentication, administrative KPI analytics dashboards, and Cloudinary media pipelines with Multer for multi-image product management.</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="flex flex-col sm:flex-row gap-3 pt-1">
+                                <a href="#" class="px-5 py-2.5 glass-button rounded-lg font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/ashrafulhaqueakashw-create/Utsab_Ethnic" target="_blank" class="px-5 py-2.5 glass-button rounded-lg font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                                    <i class="fab fa-github"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Projects Grid -->
+            <h3 class="text-2xl font-bold mb-6 text-white text-center">More Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Maison Store -->
+                <div class="project-card group">
+                    <div class="glass p-6 sm:p-7 rounded-2xl group-hover:glass-dark transition-all duration-300 h-full flex flex-col border border-white/15">
+                        <h4 class="text-lg sm:text-xl font-bold mb-2.5 text-white">Maison Store - E-Commerce Platform</h4>
+                        <p class="text-slate-300 mb-4 text-xs sm:text-sm leading-relaxed flex-grow">Full-stack e-commerce platform with luxury dark editorial aesthetic. Features product listings, user authentication, cart management, order processing, and fully responsive design built on the MERN stack.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2.5 py-1 bg-white/10 text-white rounded-full text-xs">React</span>
+                            <span class="px-2.5 py-1 bg-white/10 text-white rounded-full text-xs">Node.js</span>
+                            <span class="px-2.5 py-1 bg-white/10 text-white rounded-full text-xs">MongoDB</span>
+                            <span class="px-2.5 py-1 bg-white/10 text-white rounded-full text-xs">Express.js</span>
+                        </div>
+                        <div class="flex gap-4 pt-2">
+                            <a href="#" class="text-white hover:text-slate-300 transition-colors text-sm flex items-center gap-1.5">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/ashrafulhaqueakashw-create/SurveyHub" target="_blank" class="text-white hover:text-gray-300 transition-colors">
+                            <a href="https://github.com/ashrafulhaqueakashw-create" target="_blank" class="text-white hover:text-slate-300 transition-colors text-sm flex items-center gap-1.5">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-lg h-64 mb-6">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23cccccc;stop-opacity:0.2' /%3E%3Cstop offset='100%25' style='stop-color:%23666666;stop-opacity:0.15' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='%231a1a1a'/%3E%3Crect width='600' height='400' fill='url(%23grad2)'/%3E%3C/svg%3E" alt="Maison Store" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                            <button class="px-6 py-3 glass-button rounded-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                View Project <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="glass p-6 rounded-lg group-hover:glass-dark transition-all duration-300">
-                        <h3 class="text-2xl font-bold mb-3 text-white">Maison Store – E-Commerce Clothing Website</h3>
-                    <p class="text-slate-300 mb-4">Full-stack e-commerce platform with luxury dark editorial aesthetic built on the MERN stack. Features include product listings, user authentication, cart management, order processing, and fully responsive design.</p>
+                <!-- Task Management -->
+                <div class="project-card group">
+                    <div class="glass p-6 sm:p-7 rounded-2xl group-hover:glass-dark transition-all duration-300 h-full flex flex-col border border-white/15">
+                        <h4 class="text-lg sm:text-xl font-bold mb-2.5 text-white">Task Management Application</h4>
+                        <p class="text-slate-300 mb-4 text-xs sm:text-sm leading-relaxed flex-grow">Collaborative enterprise-grade task management system with real-time updates via WebSockets, team management, and an advanced analytics dashboard for 500+ concurrent users.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">React</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">Node.js</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">MongoDB</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">Responsive Design</span>
+                            <span class="px-2.5 py-1 bg-white/10 text-white rounded-full text-xs">Vue.js</span>
+                            <span class="px-2.5 py-1 bg-white/10 text-white rounded-full text-xs">Express.js</span>
+                            <span class="px-2.5 py-1 bg-white/10 text-white rounded-full text-xs">PostgreSQL</span>
+                            <span class="px-2.5 py-1 bg-white/10 text-white rounded-full text-xs">WebSockets</span>
                         </div>
-                        <div class="flex gap-4">
-                            <a href="#" class="text-white hover:text-gray-300 transition-colors">
+                        <div class="flex gap-4 pt-2">
+                            <a href="#" class="text-white hover:text-slate-300 transition-colors text-sm flex items-center gap-1.5">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/ashrafulhaqueakashw-create" target="_blank" class="text-white hover:text-gray-300 transition-colors">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-lg h-64 mb-6">
-                        <img src="Fuel_Flow.png" alt="FuelFlow" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                            <button class="px-6 py-3 glass-button rounded-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                View Project <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="glass p-6 rounded-lg group-hover:glass-dark transition-all duration-300">
-                        <h3 class="text-2xl font-bold mb-3 text-white">FuelFlow-Gas Station & Dispatch Management System</h3>
-                    <p class="text-slate-300 mb-4">Full-stack fuel station management platform with role-based dashboards for admins, employees, and customers. Features real-time inventory tracking with low-stock alerts, smart booking with time-slot management, order fulfillment pipeline, employee attendance and shift registration, customer review system, and live analytics. </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">TypeScript</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">Node.js</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">MySQL</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">JWT Auth</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="#" class="text-white hover:text-gray-300 transition-colors">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/ashrafulhaqueakashw-create/Fuel_Flow" target="_blank" class="text-white hover:text-gray-300 transition-colors">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-lg h-64 mb-6">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Cdefs%3E%3ClinearGradient id='grad4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d0d0d0;stop-opacity:0.2' /%3E%3Cstop offset='100%25' style='stop-color:%23777777;stop-opacity:0.15' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='%23303030'/%3E%3Crect width='600' height='400' fill='url(%23grad4)'/%3E%3C/svg%3E" alt="Task Management Application" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                            <button class="px-6 py-3 glass-button rounded-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                View Project <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="glass p-6 rounded-lg group-hover:glass-dark transition-all duration-300">
-                        <h3 class="text-2xl font-bold mb-3 text-white">Task Management Application</h3>
-                    <p class="text-slate-300 mb-4">Developed a collaborative enterprise-grade task management system using Vue.js, Express.js, PostgreSQL, and WebSockets. Supported real-time updates, team management, and an advanced analytics dashboard for 500+ concurrent users.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">Vue.js</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">Express.js</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">PostgreSQL</span>
-                            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm">WebSockets</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="#" class="text-white hover:text-gray-300 transition-colors">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/ashrafulhaqueakashw-create" target="_blank" class="text-white hover:text-gray-300 transition-colors">
+                            <a href="https://github.com/ashrafulhaqueakashw-create" target="_blank" class="text-white hover:text-slate-300 transition-colors text-sm flex items-center gap-1.5">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
@@ -468,88 +498,90 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 glass" data-section="contact">
+    <section id="contact" class="py-16 sm:py-20 px-4 glass" data-section="contact">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
-                    Get In Touch
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
+                    Let's Build Something Exceptional.
                 </h2>
-                <div class="w-24 h-1 bg-white mx-auto rounded"></div>
-                <p class="text-slate-300 mt-4">I'd love to hear from you. Feel free to reach out!</p>
+                <div class="w-24 h-1 bg-white mx-auto rounded mb-4"></div>
+                <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                    I am currently seeking an internship or full-time junior engineering role where I can apply my full-stack expertise and contribute to a fast-paced team. Whether you're a recruiter hiring for your engineering division or a client with a challenging freelance project, I'd love to connect. Let's discuss how my skills can bring tangible value to your next initiative.
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="text-center">
-                    <div class="w-16 h-16 glass rounded-lg flex items-center justify-center mx-auto mb-4 hover:shadow-lg transition-all duration-300">
-                        <i class="fas fa-envelope text-white text-2xl"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 mb-10 sm:mb-12">
+                <div class="text-center glass p-5 rounded-xl">
+                    <div class="w-14 h-14 glass rounded-lg flex items-center justify-center mx-auto mb-3.5 hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-envelope text-white text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">Email</h3>
-                    <a href="mailto:ashraful.haque.akash.w@gmail.com" class="text-slate-300 hover:text-white transition-colors">ashraful.haque.akash.w@gmail.com</a>
+                    <h3 class="text-base sm:text-lg font-bold mb-1 text-white">Email</h3>
+                    <a href="mailto:ashraful.haque.akash.w@gmail.com" class="text-slate-300 hover:text-white transition-colors text-xs sm:text-sm break-all">ashraful.haque.akash.w@gmail.com</a>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-16 h-16 glass rounded-lg flex items-center justify-center mx-auto mb-4 hover:shadow-lg transition-all duration-300">
-                        <i class="fas fa-phone text-white text-2xl"></i>
+                <div class="text-center glass p-5 rounded-xl">
+                    <div class="w-14 h-14 glass rounded-lg flex items-center justify-center mx-auto mb-3.5 hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-phone text-white text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">Phone</h3>
-                    <a href="tel:+8801836106845" class="text-slate-300 hover:text-white transition-colors">+880 1836 106845</a>
+                    <h3 class="text-base sm:text-lg font-bold mb-1 text-white">Phone</h3>
+                    <a href="tel:+8801836106845" class="text-slate-300 hover:text-white transition-colors text-xs sm:text-sm">+880 1836 106845</a>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-16 h-16 glass rounded-lg flex items-center justify-center mx-auto mb-4 hover:shadow-lg transition-all duration-300">
-                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                <div class="text-center glass p-5 rounded-xl">
+                    <div class="w-14 h-14 glass rounded-lg flex items-center justify-center mx-auto mb-3.5 hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">Location</h3>
-                    <p class="text-slate-300">Dhaka, Bangladesh</p>
+                    <h3 class="text-base sm:text-lg font-bold mb-1 text-white">Location</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm">Dhaka, Bangladesh</p>
                 </div>
             </div>
 
-            <form id="contact-form" class="contact-form glass p-8 rounded-lg">
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <form id="contact-form" class="contact-form glass p-5 sm:p-8 rounded-2xl border border-white/15">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mb-5 sm:mb-6">
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-white">Full Name</label>
-                        <input type="text" required class="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg focus:border-white/50 focus:outline-none transition-all duration-300 text-white placeholder-gray-400" placeholder="Your Name">
+                        <label for="contact-name" class="block text-sm font-semibold mb-2 text-white">Full Name</label>
+                        <input type="text" id="contact-name" name="name" autocomplete="name" required class="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-lg focus:border-white/50 focus:outline-none transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base" placeholder="Your Name">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-white">Email Address</label>
-                        <input type="email" required class="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg focus:border-white/50 focus:outline-none transition-all duration-300 text-white placeholder-gray-400" placeholder="john@example.com">
+                        <label for="contact-email" class="block text-sm font-semibold mb-2 text-white">Email Address</label>
+                        <input type="email" id="contact-email" name="email" autocomplete="email" required class="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-lg focus:border-white/50 focus:outline-none transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base" placeholder="john@example.com">
                     </div>
+                </div>
+
+                <div class="mb-5 sm:mb-6">
+                    <label for="contact-subject" class="block text-sm font-semibold mb-2 text-white">Subject</label>
+                    <input type="text" id="contact-subject" name="subject" required class="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-lg focus:border-white/50 focus:outline-none transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base" placeholder="Project Inquiry">
                 </div>
 
                 <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2 text-white">Subject</label>
-                    <input type="text" required class="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg focus:border-white/50 focus:outline-none transition-all duration-300 text-white placeholder-gray-400" placeholder="Project Inquiry">
+                    <label for="contact-message" class="block text-sm font-semibold mb-2 text-white">Message</label>
+                    <textarea id="contact-message" name="message" rows="5" required class="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-lg focus:border-white/50 focus:outline-none transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base" placeholder="Your message here..."></textarea>
                 </div>
 
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2 text-white">Message</label>
-                    <textarea rows="5" required class="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg focus:border-white/50 focus:outline-none transition-all duration-300 text-white placeholder-gray-400" placeholder="Your message here..."></textarea>
-                </div>
-
-                <button type="submit" class="w-full px-8 py-3 glass-button rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                    Send Message <i class="fas fa-paper-plane ml-2"></i>
+                <button type="submit" class="w-full py-3.5 glass-button rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                    Send Message <i class="fas fa-paper-plane"></i>
                 </button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="glass border-t py-12 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
+    <footer class="glass border-t border-white/10 py-10 sm:py-12 px-4">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
                         <div class="w-8 h-8 glass rounded-lg flex items-center justify-center">
                             <span class="text-white font-bold">&lt;/&gt;</span>
                         </div>
-                        <span class="font-bold text-lg text-white">Portfolio</span>
+                        <span class="font-bold text-lg text-white">Akash</span>
                     </div>
-                    <p class="text-slate-300">Building amazing web and mobile experiences.</p>
+                    <p class="text-slate-300 text-sm">Engineering high-performance web applications that scale.</p>
                 </div>
 
                 <div>
-                    <h3 class="font-bold mb-4 text-white">Navigation</h3>
-                    <ul class="space-y-2 text-slate-300">
+                    <h3 class="font-bold mb-3 sm:mb-4 text-white text-base">Navigation</h3>
+                    <ul class="space-y-2 text-slate-300 text-sm">
                         <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
                         <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
                         <li><a href="#skills" class="hover:text-white transition-colors">Skills</a></li>
@@ -558,35 +590,33 @@
                 </div>
 
                 <div>
-                    <h3 class="font-bold mb-4 text-white">Social</h3>
-                    <ul class="space-y-2 text-slate-300">
+                    <h3 class="font-bold mb-3 sm:mb-4 text-white text-base">Social</h3>
+                    <ul class="space-y-2 text-slate-300 text-sm">
                         <li><a href="https://github.com/ashrafulhaqueakashw-create" target="_blank" class="hover:text-white transition-colors">GitHub</a></li>
                         <li><a href="https://www.linkedin.com/in/ashraful-haque-akash-291735304/" target="_blank" class="hover:text-white transition-colors">LinkedIn</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="font-bold mb-4 text-white">Resources</h3>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Resume</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    <h3 class="font-bold mb-3 sm:mb-4 text-white text-base">Contact</h3>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li><a href="mailto:ashraful.haque.akash.w@gmail.com" class="hover:text-white transition-colors break-all">ashraful.haque.akash.w@gmail.com</a></li>
+                        <li><span class="text-slate-400">Dhaka, Bangladesh</span></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-white/20 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-slate-300 mb-4 md:mb-0">&copy; 2026 Ashraful Haque Akash. All rights reserved.</p>
+            <div class="border-t border-white/10 pt-6 sm:pt-8">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <p class="text-slate-400 text-xs sm:text-sm text-center sm:text-left">&copy; 2026 Ashraful Haque Akash. All rights reserved.</p>
                     <div class="flex gap-4">
-                        <a href="https://github.com/ashrafulhaqueakashw-create" target="_blank" class="text-2xl text-slate-300 hover:text-white transition-colors">
+                        <a href="https://github.com/ashrafulhaqueakashw-create" target="_blank" class="text-xl text-slate-300 hover:text-white transition-colors" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/ashraful-haque-akash-291735304/" target="_blank" class="text-2xl text-slate-300 hover:text-white transition-colors">
+                        <a href="https://www.linkedin.com/in/ashraful-haque-akash-291735304/" target="_blank" class="text-xl text-slate-300 hover:text-white transition-colors" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="mailto:ashraful.haque.akash.w@gmail.com" class="text-2xl text-slate-300 hover:text-white transition-colors">
+                        <a href="mailto:ashraful.haque.akash.w@gmail.com" class="text-xl text-slate-300 hover:text-white transition-colors" aria-label="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>

@@ -726,6 +726,18 @@ input:focus, textarea:focus {
    GLASS MORPHISM EFFECT - iOS 27 STYLE
    ========================================== */
 
+nav.glass {nav.glass {
+    background: rgba(10, 10, 10, 0.92) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-radius: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
 .glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
@@ -743,6 +755,7 @@ input:focus, textarea:focus {
 }
 
 .glass-button {
+    box-sizing: border-box;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -840,6 +853,7 @@ input:focus, textarea:focus {
     }
 
     .glass-button {
+    box-sizing: border-box;
         width: 100%;
         margin-bottom: 0.5rem;
     }
@@ -863,9 +877,7 @@ input:focus, textarea:focus {
     }
 
     /* Glass panels */
-    .glass {
-        padding: 1rem !important;
-    }
+    /* .glass padding managed by utility classes */
 
     /* Navigation */
     .nav-link {

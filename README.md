@@ -2,9 +2,11 @@
 
 A modern, fully responsive portfolio website showcasing full-stack development expertise. Built with HTML5, CSS3, Tailwind CSS, and JavaScript with advanced animations and mobile-first design.
 
-**Live Portfolio**: [ashrafulhaque.com](https://ashrafulhaque.com)
-**Location**: Dhaka, Bangladesh
-**Status**: Computer Science Undergraduate @ BRAC University
+**Live Portfolio**: [ashrafulhaque.com](https://ashrafulhaque.com)  
+**Location**: Dhaka, Bangladesh  
+**Status**: Computer Science Undergraduate @ BRAC University  
+
+> 📖 **Zero-to-100% Project Knowledge Base**: For the complete technical blueprint, architecture, visual design system, and featured project breakdowns, refer to [`PORTFOLIO_CONTEXT.md`](file:///g:/Portfolio/portfolio/PORTFOLIO_CONTEXT.md).
 
 ---
 
@@ -60,11 +62,14 @@ A modern, fully responsive portfolio website showcasing full-stack development e
 
 ```
 portfolio/
-├── index.html          # Main portfolio page
-├── cv.html            # Professional CV (PDF downloadable)
+├── index.html          # Main portfolio page (Featuring FuelFlow, SurveyHub, Utsab Ethnic)
+├── cv.html            # Professional CV with Next.js 15 & FuelFlow case study
 ├── styles.css         # Custom CSS with responsive breakpoints
-├── script.js          # JavaScript for interactivity
+├── script.js          # JavaScript for interactivity & animations
 ├── IMG_2637.jpg       # Profile image
+├── Fuel_Flow.png      # FuelFlow case study showcase
+├── SurveyHub.png      # SurveyHub case study showcase
+├── Utsab_Ethnic.jpg   # Utsab Ethnic case study showcase
 └── README.md          # This documentation
 ```
 
