@@ -126,7 +126,8 @@ graph TD
 
 ### 4.1 Case Study 01: FuelFlow — Gas Station & Smart Dispatch Logistics
 * **Role**: Lead Full-Stack Architect
-* **Tech Stack**: Next.js 15.5 (Turbopack), React 19, TypeScript 5, Tailwind CSS 4, MySQL (XAMPP), JWT, bcrypt
+* **Tech Stack**: Next.js 15.5 (Turbopack), React 19, TypeScript 5, Tailwind CSS 4, MySQL (TiDB Cloud Serverless / XAMPP), JWT, bcrypt
+* **Live Production**: [fuel-flow-two.vercel.app](https://fuel-flow-two.vercel.app)
 * **Repository**: [`ashrafulhaqueakashw-create/Fuel_Flow`](https://github.com/ashrafulhaqueakashw-create/Fuel_Flow)
 * **Key Achievements**:
   * **Smart Congestion-Aware Dispatching**: Built a 2-hour scheduling engine that analyzes station tank volumes and urban traffic, granting automatic 10%–15% off-peak delivery discounts.
